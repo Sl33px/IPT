@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дані трафіку</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Журнал трафіку</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ID користувача</th>
+            <th>IP-адреса</th>
+            <th>Трафік</th>
+            <th>Час</th>
+        </tr>
+        {% for log in data %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">На головну</a>
+</body>
+</html>
